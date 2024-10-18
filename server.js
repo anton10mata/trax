@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const express = require('express');
 const app = express();
 
@@ -11,6 +11,11 @@ const employeeRoutes = require('./routes/employeeRoutes');
 const scheduleRoutes = require('./routes/scheduleRoutes');
 const taskRoutes = require('./routes/taskRoutes');
 const clockRoutes = require('./routes/clockRoutes');
+
+// Root route to handle GET requests to '/'
+app.get('/', (req, res) => {
+  res.send('Welcome to the Trax API!');
+});
 
 // Use routes
 app.use('/api/auth', authRoutes);
